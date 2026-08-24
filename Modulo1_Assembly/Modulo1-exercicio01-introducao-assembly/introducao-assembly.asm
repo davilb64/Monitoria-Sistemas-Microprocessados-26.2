@@ -21,9 +21,11 @@
   .text
   ; Desliga o WatchDog
   mov.w #(WDTPW|WDTHOLD), &WDTCTL
-  mov.w #0x4400, SP
+  
 
 main:
+
+  mov.w #0x2400, R4
   ; a) move 0xFE para endereço apontado 
   ; por R4 usando o modo indexado "i(Rn)"
   mov.b #0xFE, 0(R4)
@@ -32,7 +34,7 @@ main:
   ; modo indireto "@Rn" não funciona
   ; pois o modo indireto funciona apenas
   ; na origem
-  mov.b #0xFE, @R4
+  ;mov.b #0xFE, @R4
 
   ; c) move #0xCA para end. apontado 
   ; por R4 + 1
@@ -44,7 +46,7 @@ main:
   mov.w #0x1234, 2(R4)
   mov.w #0x5678, 4(R4)
 
-  ; e) grava 0xABCD em R4 + 5 (end impar)
+  ; e) grava 0xABCD em R4 + 5 (end impar) (volta para o par arredondando para baixo)
   mov.w #0xABCD, 5(R4)
 
   jmp $
