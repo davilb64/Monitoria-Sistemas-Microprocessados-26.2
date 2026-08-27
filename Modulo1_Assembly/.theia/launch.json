@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Modulo1-exercicio25-SUM_SUB",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "Modulo1-exercicio25-SUM_SUB",
+                "resourceId": "/Modulo1-exercicio25-SUM_SUB"
+            },
+            "connections": [
+                {
+                    "name": "TI MSP430 USB1",
+                    "cores": [
+                        {
+                            "name": "MSP430",
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues/>\n"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
